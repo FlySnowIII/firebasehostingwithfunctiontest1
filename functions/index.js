@@ -12,4 +12,9 @@ app.get('/timestamp-cached',(request, response)=>{
     response.send(`${Date.now()}`);
 });
 
+app.post('/user',(request, response)=>{
+    console.log(request.body.firstname);
+    response.send(`${request.body.firstname} - ${request.body.lastname}`);
+});
+
 exports.app = functions.https.onRequest(app);
